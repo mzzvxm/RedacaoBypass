@@ -33,7 +33,7 @@
 2.  No campo de URL do favorito, cole o seguinte código:
 
     ```javascript
-    javascript:(function(){const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/mzzvxm/RedacaoBypass@main/script.js';document.body.appendChild(s);})();
+    javascript:(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/mzzvxm/RedacaoBypass@main/script.js?t='+Date.now();s.crossOrigin='anonymous';s.onload=function(){console.log('RedacaoBypass loaded (no-cache)')};document.head.appendChild(s)})();
     ```
 
 3.  Acesse a página da redação
