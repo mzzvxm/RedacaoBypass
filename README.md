@@ -1,40 +1,66 @@
-# Redação PR Bypass
+# Redação Bypass
 
-Este repositório contém um script de usuários (userscript) desenvolvido para contornar os mecanismos de segurança da plataforma Redação Paraná, permitindo o acesso direto ao conteúdo das redações.
+**Redação Bypass** é uma ferramenta avançada de automação que utiliza Inteligência Artificial para gerar e digitar redações automaticamente em plataformas de ensino, simulando comportamento humano e contornando validações de sistema.
 
-## 🚀 Instalação
+## 🚀 Funcionalidades
 
-### 1. Instalar o Gerenciador de Userscripts
+  * **IA Integrada (Gemini 2.0)**: Gera redações completas ou títulos criativos baseados no tema proposto
+  * **Contexto Inteligente**: Detecta automaticamente se o campo é um título ou o corpo da redação
+  * **Digitação Humanizada**: Simula a digitação tecla por tecla com velocidade variável
+  * **Dark Mode Automático**: Injeta proteção visual para uso noturno
+  * **Interface Flutuante**: Painel arrastável e minimizável (Modo Bolha ⚡)
 
-Escolha um dos seguintes gerenciadores de userscripts compatíveis:
+## ⚙️ Instalação
 
-* **Tampermonkey**: Disponível para [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/), [Safari](https://apps.apple.com/app/tampermonkey/id1482490089) e [Opera](https://addons.opera.com/extensions/details/tampermonkey/).
-* **Violentmonkey**: Disponível para [Chrome](https://chrome.google.com/webstore/detail/violentmonkey/), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/) e [Opera](https://addons.opera.com/extensions/details/violentmonkey/).
+### 1\. Como Userscript (Tampermonkey/Violentmonkey)
 
-### 2. Adicionar o Script ao Gerenciador
+1.  Instale o [Tampermonkey](https://www.tampermonkey.net/) no seu navegador
 
-Após instalar o gerenciador, siga os passos abaixo:
+2.  Acesse o seguinte link para instalar o script (exemplo):
 
-1. Abra o painel de controle do Tampermonkey ou Violentmonkey.
-2. Clique em **"Criar um novo script"**.
-3. Apague qualquer código presente na janela de edição.
-4. Copie o conteúdo do arquivo `tamper.js` deste repositório.
-5. Cole o código copiado na janela de edição do script.
-6. Salve o script.
+    ```
+    https://raw.githubusercontent.com/mzzvxm/RedacaoBypass/main/script.user.js
+    ```
 
-### 3. Configurar o Script
+3.  O gerenciador detectará o script e solicitará a instalação
 
-O script foi projetado para ser executado automaticamente nas páginas da plataforma Redação Paraná. Não é necessária nenhuma configuração adicional.
+4.  Confirme e o script abrirá automaticamente ao acessar a página de redação (`/student-write-essay`)
 
-## ✅ Como Usar
+### 2\. Como Bookmarklet (Favoritos)
 
-Após a instalação e configuração do script, acesse a plataforma Redação Paraná. O script será executado automaticamente, contornando os mecanismos de segurança e permitindo o acesso direto ao conteúdo das redações.
+1.  Crie um novo favorito no seu navegador
 
-## ⚠️ Aviso Legal
+2.  No campo de URL do favorito, cole o seguinte código:
 
-Este script é fornecido para fins educacionais e de pesquisa. O uso deste script para contornar sistemas de segurança sem autorização pode violar os termos de serviço da plataforma e a legislação vigente. Utilize-o com responsabilidade e sempre com a devida autorização.
+    ```javascript
+    javascript:(function(){const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/mzzvxm/RedacaoBypass@main/script.js';document.body.appendChild(s);})();
+    ```
 
-## 🖥️ Script para uso (copie e cole)  
-```js
-javascript:fetch("https://raw.githubusercontent.com/mzzvxm/RedacaoPR-Bypass/refs/heads/main/tamper.js").then(r=>r.text()).then(eval);
+3.  Acesse a página da redação
 
+4.  Clique no favorito para injetar o painel
+
+## 🔧 Configuração e Uso
+
+### Configurando a IA (Gemini)
+
+Para usar a geração automática de texto, você precisa configurar sua chave de API uma única vez:
+
+1.  Gere sua chave gratuita no [Google AI Studio](https://aistudio.google.com/app/apikey)
+2.  Cole a chave no campo **Gemini API Key** dentro do painel do script
+3.  A chave será salva automaticamente nos cookies do navegador
+
+### Controles do Painel
+
+  * **✨ Gerar com IA**: Lê o tema e cria o texto automaticamente
+  * **Digitar**: Começa a escrever o texto no campo selecionado
+  * **Velocidade**: Escolha entre *Lento*, *Normal*, *Flash* ou *Humano*
+  * **Minimizar (–)**: Transforma o painel em uma bolha flutuante para não atrapalhar a visão
+
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](https://www.google.com/search?q=LICENSE).
+
+-----
+
+*Nota: Este script é fornecido para fins educacionais e de teste de segurança (PenTest). O uso em ambientes acadêmicos reais pode violar as diretrizes da sua instituição.*
