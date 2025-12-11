@@ -405,7 +405,7 @@
         }
 
         async fetchGemini(data, isTitle) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${this.state.apiKey}`;
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${this.state.apiKey}`;
             
             let prompt = '';
             
@@ -544,4 +544,5 @@
         }
     }
     window[APP_ID] = new RedacaoBypassEngine();
+
 })();
